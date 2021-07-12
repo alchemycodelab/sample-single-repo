@@ -7,5 +7,5 @@ Client contains a create-react-app application with a "proxy" set to localhost:5
 
 We setup the express app to serve the react application in production for any routes that don't match `api`. 
 
-### Deployment
+### [Deployment](https://sample-single-repo.herokuapp.com/)
 App is deployed on Heroku and uses a `postbuild` step in [package.json](https://github.com/alchemycodelab/sample-single-repo/blob/main/package.json#L7) to build the client. 
