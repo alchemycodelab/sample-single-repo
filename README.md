@@ -3,6 +3,8 @@
 ### [Client App](https://github.com/alchemycodelab/sample-single-repo/blob/main/client)
 Client contains a create-react-app application with a "proxy" set to localhost:5000 in [package.json](./client/package.json#L38)-- this removes the need to set any URL environment variables because we're making the app think everything is being served from the same location
 
+[Example API Call](https://github.com/alchemycodelab/sample-single-repo/blob/main/client/src/App.js#L8)
+
 ### [Express App](https://github.com/alchemycodelab/sample-single-repo/blob/main/app.js#L17:L23)
 
 We setup the express app to serve the react application in production for any routes that don't match `api`. 
