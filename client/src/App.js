@@ -1,22 +1,27 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import aclLogo from './aclLogo.png';
 import './App.css';
 
 function App() {
+  const [backendMessage, setBackendMessage] = useState('')
+  const fetchData = async() => {
+    const resp = await fetch('/users');
+    const data = await resp.json();
+    console.log(data);
+    setBackendMessage(data.message);
+  }
+
+  useEffect(()=>{
+      fetchData();
+  }, [])
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={aclLogo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          { backendMessage }
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
